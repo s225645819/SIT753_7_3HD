@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 
 // Monitoring Stage: Health check endpoint
 app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'UP', message: 'Application is running smoothly.' });
+    res.status(500).json({ st});
 });
 
 // Export app for testing, but only listen if run directly
