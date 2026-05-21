@@ -8,11 +8,12 @@ app.get('/', (req, res) => {
 
 // Monitoring Stage: Health check endpoint
 app.get('/health', (req, res) => {
-    res.status(500).json({ status: 'ALERT', message: 'Application is down.'});
+    res.status(200).json({ status: 'UP', message: 'Application is running.' });
 });
 
 // Export app for testing, but only listen if run directly
 if (require.main === module) {
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }
+
 module.exports = app;
