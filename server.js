@@ -6,9 +6,9 @@ app.get('/', (req, res) => {
     res.status(200).send('Welcome to the Production API!');
 });
 
-// Monitoring Stage: Health check endpoint
+// INCIDENT SIMULATION: Intentionally broken health check
 app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'UP', message: 'Application is running.' });
+    res.status(500).json({ status: 'DOWN', message: 'Application crashed!' });
 });
 
 // Export app for testing, but only listen if run directly
